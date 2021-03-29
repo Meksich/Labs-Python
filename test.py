@@ -22,11 +22,10 @@ class TestUnderwearManager(unittest.TestCase):
         self.collection = enums.Collections.BODY_BY_VICTORIA
 
         self.underwear_manager = underwear_manager.UnderwearManager(list_of_underwear)
-        # self.maxDiff = None
 
     def test_search_by_year(self):
-        self.assertEqual(self.underwear_manager.search_by_year(self.year),
-                         [self.medium_bra, self.small_pants, self.medium_pants, self.medium_lingerie])
+        result = self.underwear_manager.search_by_year(self.year)
+        self.assertEqual(result, [self.medium_lingerie, self.small_pants, self.medium_pants, self.medium_bra])
 
     def test_search_by_collection(self):
         self.assertEqual(self.underwear_manager.search_by_collection(self.collection), [])

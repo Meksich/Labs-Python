@@ -34,3 +34,4 @@ class UnderwearManager:
             self.__underwear_list.sort(key=lambda c: c.get_price())
         else:
             self.__underwear_list.sort(key=lambda c: c.get_price(), reverse=True)
+        return self.__underwear_list
